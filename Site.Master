@@ -40,7 +40,7 @@
         <div class="content-wrapper">
             <div class="float-left">
                 <p class="site-title">
-                    <a runat="server" href="~/">your logo here</a>
+                    <a runat="server" href="~/">Tennis Club Chavornay</a>
                 </p>
             </div>
             <div class="float-right">
@@ -48,8 +48,8 @@
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul>
-                                <li><a id="registerLink" runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a id="loginLink" runat="server" href="~/Account/Login">Log in</a></li>
+                                <li><a id="registerLink" runat="server" href="~/Account/Register">S'enregistrer</a></li>
+                                <li><a id="loginLink" runat="server" href="~/Account/Login">Se connecter</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
@@ -60,22 +60,22 @@
                                 else { %>
                                     Bonsoir,
                                 <% } %>
-                                    <a runat="server" class="username" href="~/Account/Manage" title="Manage your account">
-                                    <asp:LoginName runat="server" CssClass="username" /></a>!
-                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" />
+                                    <a runat="server" class="username" href="~/Account/Manage" title="Gérer votre profil">
+                                    <asp:LoginName runat="server" CssClass="Login" /></a>!
+                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Se déconnecter" LogoutPageUrl="~/" />
                             </p>
                         </LoggedInTemplate>
                     </asp:LoginView>
                 </section>
                 <nav>
                     <ul id="menu">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/Courts">Courts</a></li>
-                        <li><a runat="server" href="~/Bookings">Bookings</a></li>
-                        <li><a runat="server" href="~/Members">Members</a></li>
+                        <li><a runat="server" href="~/">Accueil</a></li>
+                        <li><a runat="server" href="~/Courts">Terrains</a></li>
+                        <li><a runat="server" href="~/Bookings">Réservation</a></li>
+                        <li><a runat="server" href="~/Members">Membres</a></li>
                         <li><a runat="server" href="~/Profile">Profile</a></li>
-                        <li><a runat="server" href="~/Admin">Admin</a></li>
-                        <li><a runat="server" href="~/Stats">Stats</a></li>
+                        <li><a runat="server" href="~/Admin">Adminnistration</a></li>
+                        <li><a runat="server" href="~/Stats">Statistiques</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                     </ul>
                 </nav>
@@ -92,7 +92,7 @@
         <div class="content-wrapper">
             <div class="float-left">
                 <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-                (<asp:Literal runat="server" Text="<%$ AppSettings:Master%>" />)
+                <% Response.Write("v." + ASP.global_asax.Version + " (" + ConfigurationManager.AppSettings["master"] + ")"); %>
             </div>
         </div>
     </footer>

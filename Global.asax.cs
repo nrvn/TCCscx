@@ -12,7 +12,12 @@ namespace TCCscx
     public class Global : HttpApplication
     {
 
-        public static string version = "v. 0.2";
+        public static double _version = 0.2;
+
+        public static double Version
+        {
+            get { return _version; }
+        }
 
         void Application_Start(object sender, EventArgs e)
         {
