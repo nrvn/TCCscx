@@ -11,6 +11,9 @@ namespace TCCscx
 {
     public class Global : HttpApplication
     {
+
+        public static string version = "v. 0.2";
+
         void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
