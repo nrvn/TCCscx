@@ -13,5 +13,25 @@ namespace TCCscx
         {
 
         }
+
+        protected void sendRes_click(object sender, EventArgs e)
+        {
+            string dayVal = dayList.SelectedValue;
+            string timeVal = timeList.SelectedValue;
+            string playerVal = player.Text;
+            
+            tableRes.Rows[0].Cells[0].Text = "test";
+            //Response.Write(dayVal + timeVal + playerVal);       
+
+        }
+        protected void deleteRes_click(object sender, EventArgs e)
+        {
+            string dayVal = dayList.SelectedValue;
+            string timeVal = timeList.SelectedValue;
+            string playerVal = player.Text;
+
+            tableRes.Rows[0].Cells[0].Text = "";
+            //Response.Write("supprimé");
+        }
     }
 }

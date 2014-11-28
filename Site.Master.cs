@@ -13,6 +13,19 @@ namespace TCCscx
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
+        private const string msg = "Bonjour";
+
+        protected string welcomeMessage()
+        {
+            if (DateTime.Now.Hour < 18)
+            {
+                return msg;
+            }
+            else
+            {
+                return "Bonsoir";
+            }      
+        }
 
         protected void Page_Init(object sender, EventArgs e)
         {

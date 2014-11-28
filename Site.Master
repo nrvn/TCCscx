@@ -53,15 +53,10 @@
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
-                            <p>                                   
-                                <% if(DateTime.Now.Hour < 18){ %>
-                                    Bonjour,
-                                <% } 
-                                else { %>
-                                    Bonsoir,
-                                <% } %>
-                                    <a runat="server" class="username" href="~/Account/Manage" title="Gérer votre profil">
-                                    <asp:LoginName runat="server" CssClass="Login" /></a>!
+                            <p>        
+                                <%= welcomeMessage() %>           
+                                <a runat="server" class="username" href="~/Account/Manage" title="Gérer votre profil">
+                                <asp:LoginName runat="server" CssClass="Login" /></a>!
                                 <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Se déconnecter" LogoutPageUrl="~/" />
                             </p>
                         </LoggedInTemplate>
@@ -92,7 +87,7 @@
         <div class="content-wrapper">
             <div class="float-left">
                 <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-                <% Response.Write("v." + ASP.global_asax.Version + " (" + ConfigurationManager.AppSettings["master"] + ")"); %>
+                <i><% Response.Write("v." + ASP.global_asax.Version + " (" + ConfigurationManager.AppSettings["master"] + ")"); %></i>
             </div>
         </div>
     </footer>
