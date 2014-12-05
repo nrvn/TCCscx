@@ -19,6 +19,11 @@ namespace TCCscx
             string dayVal = dayList.SelectedValue;
             string timeVal = timeList.SelectedValue;
             string playerVal = player.Text;
+
+            if (playerVal == null || playerVal == "")
+            {
+                //Erreur veuillez entrer un nom de joueur
+            }
             
             tableRes.Rows[0].Cells[0].Text = "test";
             //Response.Write(dayVal + timeVal + playerVal);       
@@ -29,6 +34,11 @@ namespace TCCscx
             string dayVal = dayList.SelectedValue;
             string timeVal = timeList.SelectedValue;
             string playerVal = player.Text;
+
+            if (playerVal == null || playerVal == "")
+            {
+                //Erreur veuillez entrer un nom de joueur
+            }            
 
             tableRes.Rows[0].Cells[0].Text = "";
             //Response.Write("supprimé");
